@@ -60,8 +60,8 @@ public class Lista<A> {
       System.out.println(this.lenght);
       Node temp=this.head;
       while (i<this.lenght){
-          //System.out.println(temp.GetData());
-              if (temp.GetData()==dcomparable){
+          System.out.println(temp.GetData());
+              if (temp.GetData().equals(dcomparable)){
                   System.out.println("true");
                   return true;
               }

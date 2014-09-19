@@ -61,9 +61,8 @@ try {
       }
 Diccionario.GetHead();
 Diccionario.GetTail();
-Diccionario.GetNodeData(Diccionario.GetHead().GetNext());
-if(Diccionario.SearchData("aah"))
-    System.out.println("hi");
+
+Diccionario.SearchData("Luis");
    }
     
     }
