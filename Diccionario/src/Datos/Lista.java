@@ -6,15 +6,18 @@
 
 package Datos;
 
+import java.awt.Label;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Briam
  * @param <A>
  */
 public class Lista<A> {
-    private Node head;
-    private Node tail;
-    private int lenght;
+    Node head;
+    Node tail;
+    public int lenght;
     
 
     public Lista() {
@@ -45,7 +48,24 @@ public class Lista<A> {
     
     
     }
-    public Node GetHead(){
+    public void AddNode(String pdata, int x, int y, JLabel lbl){
+        if (this.lenght==0){
+            Slot newSlot=new Slot(pdata,x,y,lbl);
+            this.head=newSlot;
+            this.tail=newSlot;
+        }
+            if (this.lenght==1){
+            Slot newSlot=new Slot(pdata,x,y,lbl);
+            this.head.SetNext(newSlot);
+            this.tail=newSlot;
+        }
+        else{
+            Slot newSlot=new Slot(pdata,x,y,lbl);
+            this.tail.SetNext(newSlot);
+            this.tail=newSlot;
+     }
+    }
+public Node GetHead(){
        return this.head;
         
     }

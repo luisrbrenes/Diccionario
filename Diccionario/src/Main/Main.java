@@ -9,6 +9,7 @@ package Main;
 
 import Datos.Lista;
 import Datos.Matriz;
+import GUI.VentanaJuego;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -27,11 +28,16 @@ public class Main {
     public static File archivo1 = null;
     public static java.io.FileReader fr1 = null;
     public static BufferedReader br1 = null; 
+    
     /**
      * @param args the command line arguments
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException{
+        
+    VentanaJuego ventana1;
+    ventana1= new VentanaJuego();    
+        
     archivo = new File ("C:\\Users\\Briam\\Documents\\NetBeansProjects\\Diccionario\\dicc.txt");
     fr = new FileReader (archivo);
     br = new BufferedReader(fr);
@@ -45,7 +51,7 @@ public class Main {
            
              }
     Matriz tablero=new Matriz();
-    tablero.Iniciar();
+    tablero.Iniciar(ventana1);
       }
     
       }
