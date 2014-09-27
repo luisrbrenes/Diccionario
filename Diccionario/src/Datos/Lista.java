@@ -40,30 +40,8 @@ public class Lista<A> {
             Node<A> newNode=new Node<>(pdata);
             this.tail.SetNext(newNode);
             this.tail=newNode;
-            
-            
-            
-        }
+       }
     this.lenght=lenght+1;
-    
-    
-    }
-    public void AddNode(String pdata, int x, int y, JLabel lbl){
-        if (this.lenght==0){
-            Slot newSlot=new Slot(pdata,x,y,lbl);
-            this.head=newSlot;
-            this.tail=newSlot;
-        }
-            if (this.lenght==1){
-            Slot newSlot=new Slot(pdata,x,y,lbl);
-            this.head.SetNext(newSlot);
-            this.tail=newSlot;
-        }
-        else{
-            Slot newSlot=new Slot(pdata,x,y,lbl);
-            this.tail.SetNext(newSlot);
-            this.tail=newSlot;
-     }
     }
 public Node GetHead(){
        return this.head;

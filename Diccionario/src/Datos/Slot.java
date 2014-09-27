@@ -19,6 +19,7 @@ public class Slot extends Node {
     JLabel label;
     int sumador;
     String letra;
+    
     public Slot(String pdata,int x,int y,JLabel lbl) {
         super(pdata);
         this.letra=null;
@@ -27,5 +28,14 @@ public class Slot extends Node {
         this.label=lbl;
         
     }
-    
+
+public String GetLetra(){
+    return this.letra;
+}
+
+
+public JLabel GetLabel(){
+    return this.label;
+}
+
 }
