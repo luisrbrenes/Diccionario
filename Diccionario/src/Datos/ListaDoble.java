@@ -25,7 +25,7 @@ public class ListaDoble {
     }
     
     public boolean estaVacia() {
-        return primerNodo == null;
+        return this.primerNodo == null;
     }
     
     public void insertarFicha(Object datos) {
@@ -36,7 +36,7 @@ public class ListaDoble {
         }
         else {          
             NodeDoble nodo = new NodeDoble(datos,primerNodo,null);//Nodo nodo = new Nodo(datos,primerNodo,ultimoNodo);
-            primerNodo.setPrevius(nodo);
+            primerNodo.setPrevious(nodo);
             primerNodo=nodo;
             
     
@@ -54,15 +54,11 @@ public class ListaDoble {
     } 
     
          
-    public Object getElemento(int posicion){
+    public NodeDoble getElemento(int posicion){
         int contador=0;
         NodeDoble actual=primerNodo;
-        if (posicion>=0 && posicion < cantidadElementos()){
-            if (primerNodo==null && ultimoNodo==null){
-                System.out.println("Lista vacia");
-                return null;}
-            if (posicion==0)
-                return primerNodo.getDatos();
+         if (posicion==contador)
+                return actual;
             else{
                 while(actual.getNext()!=null){
                     if(contador==posicion)
@@ -74,12 +70,8 @@ public class ListaDoble {
                     }                 
                 }           
             }
-        }
-        else{
-             System.out.println("Posicion Invalida");
-             
-             }
-        return actual.getDatos();
+    
+        return actual;
         
     }
     
@@ -100,7 +92,7 @@ public class ListaDoble {
     }
     
     public void eliminarFicha(NodeDoble nodo)  {
-            NodeDoble Anterior=nodo.getPrevius();
+            NodeDoble Anterior=nodo.getPrevious();
             NodeDoble Siguiente=nodo.getNext();
             if(Anterior==null && Siguiente==null){
                 this.primerNodo=null;
@@ -109,20 +101,26 @@ public class ListaDoble {
             if(Anterior==null){
                 NodeDoble tmp=nodo.getNext();
                 this.primerNodo=tmp;
-                tmp.setPrevius(null);
+                nodo.setNext(null);
+                System.out.println(tmp.getPrevious());
     }
             if(Siguiente==null){
-                NodeDoble tmp=nodo.getPrevius();
+                NodeDoble tmp=nodo.getPrevious();
                 
                 this.ultimoNodo=tmp;
                 tmp.setNext(null);
             }
-            else{
+            if(Siguiente!=null && Anterior!=null){
                 Anterior.setNext(Siguiente);
-                Siguiente.setPrevius(Anterior);
+                Siguiente.setPrevious(Anterior);
             }
     }
-     
+public NodeDoble getPrimernodo(){
+    return this.primerNodo;
+}
+public NodeDoble getUltimonodo(){
+    return this.ultimoNodo;
+}
     
 }
 

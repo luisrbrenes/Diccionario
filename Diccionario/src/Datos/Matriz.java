@@ -96,7 +96,7 @@ public class Matriz extends Lista<Lista>{
              Lista x=(Lista)this.GetHead().GetData();
              x.GetHead();
              this.puntero=(Slot)x.GetHead();
-             //this.puntero.GetLabel().setBorder(BorderFactory.createLineBorder(Color.black));
+             this.puntero.GetLabel().setBorder(BorderFactory.createLineBorder(Color.black));
              
              }
    }

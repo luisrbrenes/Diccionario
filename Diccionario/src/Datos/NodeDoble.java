@@ -13,13 +13,13 @@ package Datos;
  */
 public class NodeDoble extends Node {
 private NodeDoble next;
-private NodeDoble previus;
+private NodeDoble previous;
 private Object pdata;
 
     public NodeDoble(Object pdata,NodeDoble sig, NodeDoble ant) {
         super(pdata);
         this.next= sig;
-        this.previus=ant;
+        this.previous=ant;
     }
      public void setDatos(Object datos) {
         this.pdata = datos;
@@ -35,12 +35,12 @@ private Object pdata;
     public NodeDoble getNext() {
         return this.next;
     }
-    public void setPrevius(NodeDoble anteriorNodo){
-        this.previus= anteriorNodo;
+    public void setPrevious(NodeDoble anteriorNodo){
+        this.previous= anteriorNodo;
         
     }
-   public NodeDoble getPrevius(){
-       return this.previus;
+   public NodeDoble getPrevious(){
+       return this.previous;
    }
 }   
 

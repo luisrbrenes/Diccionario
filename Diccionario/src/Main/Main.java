@@ -10,6 +10,7 @@ package Main;
 import Datos.Lista;
 import Datos.Matriz;
 import GUI.VentanaJuego;
+import Logic.Juego;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -52,6 +53,11 @@ public class Main {
              }
     Matriz tablero=new Matriz();
     tablero.Iniciar(ventana1);
+    Juego juego=new Juego(2);
+    juego.creaJugadores();
+    juego.creaFichas();
+    juego.imprimeMazo();
+    //juego.desordenarFichas();
       }
     
       }
