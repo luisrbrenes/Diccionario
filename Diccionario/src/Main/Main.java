@@ -8,6 +8,7 @@ package Main;
 
 
 import Datos.Lista;
+import Datos.ListaDoble;
 import Datos.Matriz;
 import GUI.VentanaJuego;
 import Logic.Juego;
@@ -45,6 +46,14 @@ public class Main {
    
         
     Lista<String> Diccionario=new Lista<>();
+    ListaDoble s=new ListaDoble();
+    //s.insertarFicha("q");
+  //  s.insertarFicha("w");
+//    s.insertarFicha("x");
+    //s.imprimir();
+    //s.eliminarFicha(s.getPrimernodo().getNext());
+    //System.out.println(s.cantidadElementos());
+    //s.imprimir();
     String linea;
     while((linea=br.readLine())!=null)
          {
@@ -56,8 +65,11 @@ public class Main {
     Juego juego=new Juego(2);
     juego.creaJugadores();
     juego.creaFichas();
+    //juego.imprimeMazo();
+    juego.desordenarFichas();
     juego.imprimeMazo();
-    //juego.desordenarFichas();
+    juego.lenght();
+    
       }
     
       }

@@ -41,12 +41,12 @@ public void creaJugadores(){
     
 }
 public void creaFichas(){//crea las fichas ordenadamente.
-        for (int i=0;i<=2;i++){
+        for (int i=1;i<=2;i++){
             this.fichas.insertarFicha("comodin");
          
         }
         
-        for(int x=1; x<=98;x++){
+        for(int x=1; x<=99;x++){
             if (x<=12)
                 fichas.insertarFicha("E");
             else if (x<=21)
@@ -75,43 +75,46 @@ public void creaFichas(){//crea las fichas ordenadamente.
                 fichas.insertarFicha("B");
             else if (x<=79)
                 fichas.insertarFicha("C");
-            else if (x<=82)
+            else if (x<=81)
                 fichas.insertarFicha("M");
-            else if (x<=84)
+            else if (x<=83)
                 fichas.insertarFicha("P");
-            else if (x<=86)
+            else if (x<=85)
                 fichas.insertarFicha("F");
-            else if (x<=88)
+            else if (x<=87)
                 fichas.insertarFicha("H");
-            else if (x<=90)
+            else if (x<=89)
                 fichas.insertarFicha("V");
-            else if (x<=92)
+            else if (x<=91)
                 fichas.insertarFicha("W"); 
-            else if (x<=94)
+            else if (x<=93)
                 fichas.insertarFicha("Y");
-            else if (x<=95)
+            else if (x<=94)
                 fichas.insertarFicha("K");
-            else if (x<=96)
+            else if (x<=95)
                 fichas.insertarFicha("J");
-            else if (x<=97)
+            else if (x<=96)
                 fichas.insertarFicha("X");
-            else if (x<=98)
+            else if (x<=97)
                 fichas.insertarFicha("Q");
-            else 
+            else
                 fichas.insertarFicha("Z");
+          
 
-}
+                        }
 
 
 }
 
 public void desordenarFichas(){
 ListaDoble arreglo_nuevo=new ListaDoble();
-        while(101>arreglo_nuevo.cantidadElementos()){
-            
+int i=100;
+        while(i!=0){
+                
                 int random=randomNumero(0,this.fichas.cantidadElementos());
-                arreglo_nuevo.insertarFicha(this.fichas.getElemento(random));       
+                arreglo_nuevo.insertarFicha(this.fichas.getElemento(random).GetData());       
                 this.fichas.eliminarFicha((NodeDoble)this.fichas.getElemento(random));
+                i--;
                 }
         this.fichas=arreglo_nuevo;
         
@@ -119,14 +122,18 @@ ListaDoble arreglo_nuevo=new ListaDoble();
             }
         public void imprimeMazo()
         {   
-            int i=0;
+            int i=1;
             NodeDoble tmp=this.fichas.getPrimernodo();
             while(tmp.getNext()!=null){
-                System.out.println(i);
+                //System.out.println(i);
                 System.out.println(tmp.GetData());
                 tmp=tmp.getNext();
                 i++;
         }}
+        public void lenght(){
+            System.out.println(this.fichas.cantidadElementos());
+        }
+        
         }
 
 
