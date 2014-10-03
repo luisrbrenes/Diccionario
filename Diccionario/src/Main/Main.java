@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package Main;
 
 
 import Datos.Lista;
 import Datos.ListaDoble;
-import Datos.Matriz;
+
+import GUI.MenuJuego;
 import GUI.VentanaJuego;
 import Logic.Juego;
 import java.io.BufferedReader;
@@ -19,10 +15,6 @@ import java.io.IOException;
 
 
 
-/**
- *
- * @author Briam
- */
 public class Main {
     public static File archivo = null;
     public static java.io.FileReader fr = null;
@@ -35,44 +27,31 @@ public class Main {
      * @param args the command line arguments
      * @throws java.io.IOException
      */
-    public static void main(String[] args) throws IOException{
+    
+    public static void main(String[] args) throws IOException{   
+    MenuJuego menu=new MenuJuego();
+    
         
-    VentanaJuego ventana1;
-    ventana1= new VentanaJuego();    
-        
-    archivo = new File ("C:\\Users\\Briam\\Documents\\NetBeansProjects\\Diccionario\\dicc.txt");
+    //lee los archivos txt.      
+    archivo = new File ("src/dicc.txt");
     fr = new FileReader (archivo);
     br = new BufferedReader(fr);
    
-        
+    //inicializacion de listas.    
     Lista<String> Diccionario=new Lista<>();
-    ListaDoble s=new ListaDoble();
-    //s.insertarFicha("q");
-  //  s.insertarFicha("w");
-//    s.insertarFicha("x");
-    //s.imprimir();
-    //s.eliminarFicha(s.getPrimernodo().getNext());
-    //System.out.println(s.cantidadElementos());
-    //s.imprimir();
+    ListaDoble s=new ListaDoble(); 
     String linea;
-    while((linea=br.readLine())!=null)
-         {
+    while((linea=br.readLine())!=null)     
             Diccionario.AddNode(linea);
-           
-             }
-    Matriz tablero=new Matriz();
-    tablero.Iniciar(ventana1);
-    Juego juego=new Juego(2);
-    juego.creaJugadores();
-    juego.creaFichas();
-    //juego.imprimeMazo();
-    juego.desordenarFichas();
-    juego.imprimeMazo();
-    juego.lenght();
+       
+   
+   
     
-      }
     
-      }
+    
+    }
+    
+}
 
     
 

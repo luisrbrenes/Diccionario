@@ -1,19 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package Datos;
 
-import java.awt.Label;
-import javax.swing.JLabel;
 
-/**
- *
- * @author Briam
- * @param <A>
- */
+
 public class Lista<A> {
     Node head;
     Node tail;
@@ -49,7 +38,7 @@ public Node GetHead(){
     }
   public Node GetTail(){
          return this.tail;
-}
+} 
   public void GetNodeData(Node x){
          x.GetData();
   }
@@ -71,4 +60,7 @@ public Node GetHead(){
      return false;
       }
       
+  public int lenght(){
+          return this.lenght;
   }
+}

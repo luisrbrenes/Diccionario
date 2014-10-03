@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Datos;
 
@@ -31,6 +27,7 @@ public class ListaSlot extends Lista {
             Slot newSlot=new Slot(pdata,x,y,lbl);
             this.head.SetNext(newSlot);
             this.tail=newSlot;
+            this.lenght=lenght+1;
         }
         else{
             Slot newSlot=new Slot(pdata,x,y,lbl);
@@ -52,5 +49,5 @@ public class ListaSlot extends Lista {
          x.GetData();
   }
       
-  }
+}
 

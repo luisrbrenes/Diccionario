@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Datos;
 
@@ -32,10 +28,19 @@ public class Slot extends Node {
 public String GetLetra(){
     return this.letra;
 }
-
+public void SetLetra(String letra){
+    this.letra=letra;
+}
 
 public JLabel GetLabel(){
     return this.label;
 }
 
+public int ejex(){
+    return this.ejex;
+}
+
+public int ejey(){
+    return this.ejey;
+}
 }
